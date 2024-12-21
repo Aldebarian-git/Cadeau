@@ -130,10 +130,12 @@ button:hover {
   height: 100%;
   background-color: black;
   color: white;
-  position: absolute;
+  position: fixed; /* Change de absolute à fixed */
+  top: 0; /* Assure qu'il couvre l'écran */
+  left: 0; /* Assure qu'il couvre l'écran */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Aligne verticalement */
+  justify-content: center; /* Centre horizontalement */
   font-size: 2rem;
   z-index: 10;
   opacity: 1;

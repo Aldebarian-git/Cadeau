@@ -1,0 +1,149 @@
+@font-face {
+  font-family: chris;
+  src: url(./fonts/Silver\ Christmas\ -\ Personal\ Use.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  --var--bg--color: #81aa9c;
+  min-height: min-content;
+  width: 100%;
+}
+
+body {
+  background-color: #81aa9c;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
+  position: relative;
+  padding: 6vh 0;
+}
+header {
+  background: url(./Assets/bordertop.png) center/contain repeat-x;
+  height: 20%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+@media screen and (max-width: 702px) {
+  header {
+    background: url(./Assets/bordertop.png) top center no-repeat; /* Position top et centré */
+    background-size: contain; /* L'image s'adapte à la largeur ou hauteur du conteneur */
+  }
+}
+
+.container {
+  width: 80vw;
+  max-height: min-content;
+  background-color: #ccd1e4;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 2vh;
+}
+
+h1 {
+  font-size: 100px;
+  color: white;
+  /* font-family: "Mountains of Christmas", cursive; */
+  font-family: chris;
+  font-weight: normal;
+  text-align: center;
+}
+
+footer {
+  background: url(./Assets/bot2.png) center/cover;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+p {
+  font-family: "Birthstone", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 30px;
+  margin: 1vh 0;
+  position: relative; /* Nécessaire pour que le :after soit positionné correctement */
+}
+
+p:after {
+  content: ""; /* Nécessaire pour créer l'élément */
+  display: block; /* Permet de rendre visible la bordure */
+  width: 50%; /* Largeur de la bordure */
+  height: 1px; /* Épaisseur de la bordure */
+  background-color: rgba(128, 128, 128, 0.336); /* Couleur de la bordure */
+  margin: 10px auto;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Mountains of Christmas", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: black;
+}
+
+.text {
+  background-color: white;
+  border-radius: 15px;
+  padding: 2vh 5vw;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  width: min-content;
+  white-space: nowrap;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccd1e4;
+  padding: 1rem;
+  margin: auto;
+  cursor: pointer;
+  background-color: var(--var--bg--color);
+  color: white;
+}
+
+button:hover {
+  background-color: #ccd1e4;
+  border: 1px solid #81aa9c;
+  color: black;
+}
+
+.enter {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 1s ease; /* Animation en fondu */
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Masquer la page de couverture */
+.enter.hidden {
+  opacity: 0; /* Réduire l'opacité à 0 */
+  pointer-events: none; /* Désactiver les clics */
+}
